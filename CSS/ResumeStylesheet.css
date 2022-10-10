@@ -1,0 +1,128 @@
+@import url(GenericElements.css);
+
+.primaryCont{
+    position: relative;
+    width:94rem;
+    left:6rem;
+    /* text-align: center; */
+}
+
+.primaryCont .container{
+    margin:2%;
+    border: 1rem solid rgb(33, 33, 41); 
+    height: 100rem;
+}
+
+.primaryCont header{
+    text-align:center;
+    background-color: rgba(64, 64, 125,0.5);
+}
+
+.primaryCont #title{
+    font-size: 3rem;
+    text-decoration: underline;
+}
+
+.divis{
+    position: relative;
+    /* display: block; */
+    height:0.5rem;
+    background-color: rgb(36, 130, 98);
+    border: 0.2rem solid rgba(64, 64, 125,0.5);
+}
+
+.primaryCont .Cont{
+    display: inline-grid;
+}
+
+.primaryCont .compitencies div{
+    margin: 2% 2% 6% 2%;
+}
+
+.primaryCont .Cont h2{
+    margin-bottom: 1%;
+    color: rgb(33, 33, 41);
+    text-decoration: underline;
+    font-size:2.2rem;
+}
+
+.primaryCont .Cont h3{
+    color: rgb(36, 130, 98);
+    margin-left:3%;
+    font-size:1.7rem;
+}
+
+.primaryCont .Cont .firstBul li{
+    color: whitesmoke;
+    margin-left:10%;
+    font-size:1.2rem;
+}
+
+.jobs a{
+    color: whitesmoke;
+}
+
+.left{
+    width:58%;
+    margin: 2% 1% 2% 5%;
+}
+
+.right{
+    border: 0.25rem solid rgba(64, 64, 125,1);
+    float: right;
+    width:32%;
+    padding:3%;
+    margin: 2%;
+}
+
+.right .skills ul{
+    list-style: none;
+}
+/* .right .skills{
+
+} */
+
+
+.contact a{
+    font-size: 1.25rem;
+    color: rgb(36, 130, 98);
+    display: inline-block;
+    margin: 3% 0 3% 5%;    
+}
+
+.skills ul li{
+    margin:2% 0 15% 0;
+}
+
+.skills ul li svg{
+    float: right;
+    align-items: center;
+    -ms-transform: translateY(-70%); 
+    transform: translateY(-70%);
+}
+
+.skills svg text{
+    fill:rgb(33, 33, 41);
+    font-size: 30px;
+}
+
+.awards ul li{
+    margin: 1% 0 3% 10%;
+    font-size: 1.2rem;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+/* .fa-phone{
+    float: left;
+    margin-left:70%;
+}
+
+
+.fa-address-book{
+    float: right;
+    margin-right:70%;
+} */
+
+
+
