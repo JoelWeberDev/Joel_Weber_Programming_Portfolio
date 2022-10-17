@@ -14,7 +14,7 @@
     <!-- Jquery source code -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- resizing functionality -->
-    <script type="text/javascript" src="JS\cssSizing.js"></script>
+    <script type="text/javascript" src="JS\cssSizing.js" id="pageSetup"></script>
     <!-- Futher page setup -->
     <meta charset="UTF-8">
     <title>Joel's Portfolio</title>
@@ -24,11 +24,11 @@
 
 
 <body>
-    <header id="genBan">
-        <a id="logo" href="index.htm">JW</a>
+    <header id="genBan" class="col-o-12">
+        <a id="logo" class="col-o-1" href="index.htm">JW</a>
         <h1 id="name"><u>|  Joel Weber  |</u></h1>
     </header>
-    <div class="break">
+    <div class="break col-o-11 side- -le06">
         <br>
         <hr id="line">
     </div>
@@ -86,7 +86,7 @@
             </div>
             
             <!-- <div class="quoteSct"> -->
-            <svg id="triangle" viewbox="100 5 20 20" width="100%" height="70%">
+            <svg id="triangle" viewbox="100 5 19 19" width="100%" height="70%">
                 <polygon points="200 15, 0 0, 0 30" style="fill:rgb(33, 33, 41); stroke: rgb(36, 130, 98); stroke-width: 0.7px;" />
             </svg>
             <div id="quoteCont">
@@ -156,5 +156,7 @@
         </span>
     </footer>
 </body>
+
+<script>postContLoad();</script>
 
 </html>

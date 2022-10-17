@@ -78,7 +78,7 @@
 #triangle{
     position: relative;
     /* top:40rem; */
-    transform: translateY(-25%);
+    transform: translateY(-23%);
     z-index: 3;
 }
 
