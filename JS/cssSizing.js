@@ -13,6 +13,7 @@
 class mediaQ{
     constructor() {
         this.setSide();
+        
     }
         // Use the key indacators to determine classes that neeed to be set left or right
     setSide() {
