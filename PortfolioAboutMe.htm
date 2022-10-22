@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="CSS\AboutStylesheet.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="JS\ImageCarasol.js"></script>
-    <script type="text/javascript" src="JS\cssSizing.js"></script>
+    <script type="text/javascript" src="JS\cssSizing.js" id="pageSetup"></script>
     <meta charset="UTF-8">
     <title>Projects</title>
 </head>
@@ -52,9 +52,9 @@
         </ul>
     </nav>
 
-    <section class="Passions res">
+    <section id="Passions" class="res col-o-11 side -le06 pos-r dupe- (col-xl-8,col-l-8,col-s-10,col-xs-11,marg,m*xs-02-02-02-00,m*s-02-07-02-07)">
         <h1 id="primtitle">Passions</h1>
-        <div class="Faith" >
+        <div id="Faith" class="dupeRec marg m*d-02-02-02-00" >
             <h3>My Christian Idenity</h3>
             <p>
                 The most defining aspect about me is that I a follower of Jesus Christ because he willing endured the 
@@ -63,7 +63,7 @@
                 through love and work together with a respect for eachother and a united cause.        
             </p>
         </div>
-        <div class="Inspire">
+        <div id="Inspire" class="dupeRec marg m*d-02-02-02-15 m*a-">
             <h3>Inspiring Others to Achieve</h3>
             <p>
                 I believe that there is increadible value when people are inspired to achieve and excel as they go through life.
@@ -74,7 +74,7 @@
             </p>
         </div>
 
-        <div class="Learning" >
+        <div id="Learning" class="dupeRec marg m*d-02-02-02-30" >
             <h3>Expanding Knowledge </h3>
             <p>
                 I regard every aspect of life is an opportunity to learn something new regardless of how menial or insignicant it 
@@ -84,18 +84,15 @@
                 ideas.
             </p>
         </div>
-        <!-- <div class="Efficentcy" >
-            <h3>Optimizing Efficentcy</h3>
-        </div> -->
     </section>
 
-    <section class="Images res">
-        <img src="Images\PXL_20220911_183916564.PORTRAIT.jpg">
+    <section class="Images res col-o-11 side -le06 pos-r">
+        <img src="Images\PXL_20220911_183916564.PORTRAIT.jpg" class="col-xl-6 col-l-7 col-s-8 col-xs-11">
     </section>
 
-    <section class="Avocations">
+    <section id="Avocations" class="col-o-11 side -le06 pos-r dupe- (col-xl-4,col-l-4,col-s-4,col-xs-4,marg,m*d-01-01-01-01)">
         
-        <div class="sports">
+        <div id="sports" class="dupeRec">
             <ul class="activites">
                 <li class="vball">
                     <h2>Volleyball</h2>
@@ -130,17 +127,16 @@
             </ul>
         </div>
 
-        <div class="title res">
+        <div id="title" class="res dupeRec">
             <h1 id="indtitle">Avocations</h1>
             <button class="shift left" onclick="toggleImg(-1)">&lt;</button>
             <button class="shift right" onclick="toggleImg(1)">&gt;</button>
             <span class="imgCaros">
-                
-                <img id="imgCont" src="Images\PXL_20220911_190446050.jpg">
+                <img id="imgCont" class="'col-o-12" src="Images\PXL_20220911_190446050.jpg">
             </span>
         </div>
 
-        <div class="hobbies">
+        <div id="hobbies" class="dupeRec">
             <ul class="activites">
                 <li class="camping">
                     <h2>Back Country Camping</h2>
@@ -156,7 +152,7 @@
                 <li class="remoteCont">
                     <h2>Flying Remotely Controlled Devices</h2>
                     <ul class="details">
-                        <h3>The idea of flighting always intruiged me so I...</h3>
+                        <h3>The idea of flight has always intruiged me so I...</h3>
                         <li>Gather arial drone footage</li>
                         <li>Fly, build and crash remote control aeroplanes</li>
                         <li>Aspire to obtain my private pilot's licence and fly recreationally</li>
@@ -169,7 +165,7 @@
                         <li>Practice building with precise measurements and parameters</li>
                         <li>Create custom components for personal projects</li>
                         <li>Gain experience working with electromechanical systems</li>
-                        <!-- <li>See if I can do it</li> -->
+                        <li>See if I can do it</li>
                     </ul>
                 </li>
             </ul>
@@ -187,9 +183,9 @@
         </div> -->
     </section>
 
-    <section class="Visions res">
+    <section id="Visions" class="col-o-11 side -le06 pos-r dupe- (col-xl-4,col-l-4,col-s-11,col-xs-11,marg,m*s-02-02-02-02,m*xs-02-02-02-02)">
         <h1 id="primtitle">Visions</h1>
-        <div class="teaching" >
+        <div id="teaching" class="dupeRec" >
             <h2 class="headers">Motivating Others</h2>
             <p>
                 As outlined earlier in the passions section I have a strong desire to inspire others to set ambitious goals and 
@@ -221,7 +217,7 @@
             </ul>
         </div>
 
-        <div class="development" >
+        <div id="development" class="dupeRec m*d-13-02-02-02" >
             <h2 class="headers">Freelance Development</h2>
             <p>
                 I really enjoy developing a system to solve a problem bottom up, from start to finish. Being a freelance
@@ -232,7 +228,7 @@
             </p>
         </div>
 
-        <div class="school">
+        <div id ="school" class="dupeRec m*d-05-35-05-35">
             <h2 class="headers">Computer Science Degree</h2>
             <p>
                 I am passionate about computer development am always looking to strengthen my programming skills understanding.
@@ -255,3 +251,5 @@
         </span>
     </footer>
 </body>
+
+<script>postContLoad();</script>

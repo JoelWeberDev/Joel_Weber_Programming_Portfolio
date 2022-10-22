@@ -1,6 +1,13 @@
 /* Initial setup */
 @import url(GenericElements.css);
 
+/* Special Resposnive Styling */
+
+
+@media only screen and (min-width: 1024px) {}
+
+@media only screen and (min-width: 1320px) {}
+
 h1{
     text-decoration: underline;
 }
@@ -22,47 +29,38 @@ p {
 }
 
 section{
-    position: relative;
-    width: 94%;
-    height:auto;
-    left: 6%;
-    justify-content: space-around;
     padding: 3rem;
 }
-.Passions{
+#Passions{
     background-color: rgb(33, 33, 41);
     border:0.13rem solid whitesmoke;
     text-align: left;
-    width: 94%;
-    height:auto;
-    left: 6%;
 }
 
-.Passions div{
+#Passions div{
     display:inline-block;
-    width: 70%;
     margin:2%;
     background-color: rgb(33, 33, 41);
     border:0.13rem solid rgb(36, 130, 98);
 }
 
-.Passions .Inspire{
-    margin-inline-start: 15%;
+#Passions #Faith{
+    margin: 0%;
 }
 
-.Passions .Learning{
-    margin-inline-start: 30%;
+#Passions #Inspire{
+    margin-left: 15%;
 }
 
-.Passions .Efficentcy{
-    margin-inline-start: 45%;
+#Passions #Learning{
+    margin-left: 30%;
 }
 
-.Passions div h3{
+#Passions div h3{
     margin-left:3%;
 }
 
-.Passions div p{
+#Passions div p{
     margin: 2% 40% 3% 5%;
 }
 
@@ -71,42 +69,41 @@ section{
 }
 
 .Images img{
-    width:50%;
+
     height:auto;
-    margin:5%;
+    margin:5% 0 5% 0 ;
 }
 
-.Avocations{
+#Avocations{
     background-color: rgb(33, 33, 41);
     border:0.13rem solid whitesmoke;
     text-align: center;
     
 }
 
-.Avocations div{
+#Avocations div{
     display: inline-block;
-    width: 31%;
-    margin: 0 1% 1% 1%;
     border:0.13rem solid rgb(36, 130, 98);
     vertical-align: top;
 }
 
-.Avocations .title{
+#Avocations #title{
+    width: 30%;
     border: none;
     -ms-transform: translateY(-5%); 
     transform: translateY(-5%);
 }
 
-.Avocations #indtitle{
-    font-size: 400%;
+#Avocations #indtitle{
+    font-size: 4rem;
     text-align: center;
 }
 
-.Avocations .activites{
+#Avocations .activites{
     list-style: none;
 }
 
-.Avocations .shift{
+#Avocations .shift{
     font-size: 1.3rem;
     width:2rem;
     height: 2rem;
@@ -116,86 +113,79 @@ section{
     /* position: absolute; */
 }
 
-.Avocations .right{
+#Avocations .right{
     float: right;
-    /* right: 95%; */
 }
 
-.Avocations .left{
+#Avocations .left{
     float: left;
-    /* left: 5%; */
 }
 
 
-.Avocations .imgCaros img{
-    width: 100%;
+#Avocations .imgCaros img{
     display: flex;
     height: auto;
     vertical-align:middle;
 }
 
-.Avocations .activites .details{
+#Avocations .activites .details{
     text-align: left;
     margin: 3%;
 }
 
-.Avocations .activites .details li{
+#Avocations .activites .details li{
     margin:3% 3% 3% 7%;
 }
 
-.Visions{
-    height: 62.5rem;
+ #Visions{
+    height: auto;
     display: block;
 }
 
-.Visions h1{
+ #Visions h1{
     padding-bottom: 5%;
     text-align: left;
 }
 
-.Visions div{
+ #Visions div{
     border: 0.13rem solid rgb(33, 33, 41);
-    width: 30%;
+    /* display: inline-block; */
+    /* width: 30%; */
     padding:2%;
     text-align: center;
 }
 
-.Visions .headers{
+ #Visions .headers{
     color: rgb(33, 33, 41);
     margin:2%;
 }
 
-.Visions .teaching{
+ #Visions #teaching{
     float: left;
 }
 
-.Visions .teaching ul{
+ #Visions #teaching ul{
     list-style: none;
 }
 
-.Visions .teaching ul{
+ #Visions #teaching ul{
     text-align: left;
 }
 
-.Visions .teaching ul li p{
+ #Visions #teaching ul li p{
     margin-left:10%;
 }
 
-.Visions .school{
-    margin: 5% 35% 5% 35%;
-}
-
-.Visions .school img{
+ #Visions #school img{
     width: 80%;
     height: auto;
     margin-top: 2%;
 }
-.Visions .development{
-    margin-block-start: 13%;
+ #Visions #development{
     float: right;
 }
 
-.Visions div h3{
+ #Visions div h3{
     margin-left: 3%;
 }
 
