@@ -1,96 +1,111 @@
+<!-- Responsive design for this page! 
+    - Toggle widths for the content based on screen resolution state
+    - Make the image scale properly in the development portfolio title
+    - Ensure that the contenet stays in the blocks in the projects grid
+    - Ensure that the text fits and resizes properly in all the content boxes -->
+<!-- Page content revision 
+    - Add images of the soybean controller
+    - Make the iniaial title more interesting
+    - Add images of myself programming
+    - Add the dishwasher project
+    - 
+For lower resolution and smaller screens verically align elements rather than an inine method -->
+
+
+
 <!DOCTYPE html>
 
 <html lang='en'>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Styling and CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="CSS\ProjectStylesheet.css">
-    <script rel="javascript" src="JS\GenericImp.js"></script>
+    <!-- <script rel="javascript" src="JS\GenericImp.js"></script> -->
+    <!-- Jquery source code -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="JS\cssSizing.js"></script>
+    <!-- resizing functionality -->
+    <script type="text/javascript" src="JS\cssSizing.js" id="pageSetup"></script>
+    <!-- Futher page setup -->
     <meta charset="UTF-8">
     <title>Projects</title>
 </head>
 
 <body>
-    <header id="genBan">
-        <a id="logo" href="index.htm">JW</a>
-        <h1 id="name"><u>|  Joel Weber  |</u></h1>
+    <header id="genBan" class="col-o-12">
+            <div id="logo-area" class="col-o-12 dupe- (txtSet,txtRstc0.5,fontSz1.5rem,col-o-1,logo)">
+            <a id="initals" class="lgScreen dupeRec" href="index.htm">JW</a>
+            <i id="pile" class="fa fa-bars dupeRec" aria-hidden="true"></i>
+            <h1 id="name" class=""><u>|  Joel Weber  |</u></h1>
+        </div>
     </header>
-    <div class="break">
-        <br>
-        <hr id="line">
-    </div>
 
-    <nav class="menu">        
-        <ul id="pages">
+    <nav id="menu" class="col-l-1 col-s-4 col-xs-5">        
+        <ul id="pages" class="txtSet txtRstc3.7 fontSz1rem">
             <li>
-                <a href="index.htm">
+                <a id="home" href="index.htm">
                     <span class="icon"></span>
                     <span class="title">Home</span>
                 </a>
             </li>
             <li>
-                <a href="PortfolioAboutMe.htm">
+                <a id="about" href="PortfolioAboutMe.htm">
                     <span class="icon"></span>
                     <span class="title">About</span>
                 </a>
             </li>
             <li>
-                <a href="PortfolioProjects.htm">
+                <a id="projects" href="PortfolioProjects.htm">
                     <span class="icon"></span>
                     <span class="title">Projects</span>
                 </a>
             </li>
             <li>
-                <a href="PortfolioResume.htm">
+                <a id="resume" href="PortfolioResume.htm">
                     <span class="icon"></span>
                     <span class="title">Resume</span>
                 </a>
             </li>
-            <!-- <li>
-                <a href="PortfolioTheFuture.htm">
-                    <span class="icon"></span>
-                    <span class="title">Future</span>
-                </a>
-            </li> -->
         </ul>
     </nav>
 
-    <section id="contentSct">
-        <div id="title">
-            <h1>Development Portfolio</h1>
-        </div>
-        <div id="subTitle">
-            <h3>Below are some key milestone accomplishments that represent my work in technological development.</h3>
-            <img src="Images\PXL_20220911_184324939.PORTRAIT.jpg">
+    <div id="primary" class="txtSet txtRstc55 fontSz3.125rem col-l-11 col-s-12 col-xs-12 side **le06 *s*le00 *xs*le00 pos-r transp base:menu">
+        <h1 id="title">Development Portfolio</h1>
+        <div id="subTitle" class="dupe- (marg,m*s-00-00-00-00) " >
+            <span id="desc" class="col-l-9 col-s-12 m*d-00-00-00-05 dupeRec"><h3>Below are some key milestone accomplishments that represent my work in technological development.</h3></span>
+            <span id="profile" class="col-l-7 col-s-12 m*d-03-03-03-03 dupeRec"><img src="Images\PXL_20220911_184324939.PORTRAIT.jpg"></span>
         </div>
 
-        <div id="projectGrid">
-            <div id="item1">
+        <div id="projectGrid" class="txtSet txtRstc60 fontSz1.5rem col-l-12 dupe- (col-l-12,col-s-12)">
+            <div id="cropRow" class="dupeRec grid">
                 <h1>Crop Row Recognition System</h1>
                 <div class="desc">
                     <p>
                         Since early 2020 I have been researching how computer vision has and can be integrated into agricultural
                         systems to increase precision and opertion efficiency. I am currently working to develop a system that 
                         can detect crop rows from video and guide a weeding implement accordingly. This project is still in 
-                        perliminary stages, but I currenlty have a model that can identify crop rows in most situations.
+                        prelimniary stages, but I currently have a model functional enough to most green crops in low weed foliage.
+                        My next steps for this project include calculating object size from the camera field of view and employing 
+                        crops spacing inference to differentiate between crop rows and weeds which are located more sporatically.
                     </p>
                     <!-- insert two videos of model working -->
                 </div>
             </div>
-            <div id="item2">
+            <div id="compitence" class="dupeRec grid">
                 <h1>Programming Background Experience</h1>
                 <div class="desc">
                     <p>
                         The rise of expansive open source online code and online resources has enabled me to learn
-                        increadible amounts about software development through self guided studies. I taught myself 
-                        basics of python programming which then was expanded on throughout a high school computer 
-                        science course. I also have a well versed background in manipulating primarily Arduino, ESP and 
-                        Raspberry Pi PLCs (Programmable Logic Controllers) through C++ and Python platforms. I to learn 
-                        the coding syntax and techiques I use SoloLearn where I have completed the following courses:
+                        increadible amounts about software development through self guided studies. Through hobbies and 
+                        personal projects I learned the basics of python programming which then was expanded on throughout high school computer 
+                        science courses. I also have a well versed background in manipulating primarily Arduino, ESP and 
+                        Raspberry Pi PLCs (Programmable Logic Controllers) through C++ and Python platforms. Futhermore I 
+                        use online course aggregators such as Udemy, EDx, and SoloLearn to futher develop my proficientcy in
+                        web development,computer vision, and machine learning.
                     </p>
+                    <h3 id="cert">Certifications</h3>
+
                     <ul class="skills">
                         <li>
                             <a href="Images\HTMLCert.jpg">HTML</a>
@@ -119,15 +134,14 @@
                 </div>
             </div>
             <div id="images">
-
             </div>
-            <div id="item3">
+            <div id="minor" class="dupeRec grid">
                 <h1>Minor Personal and Assignment Projects</h1>
                 <div class="desc">
                     <p>
-                        As is essential for learning I pushed myself to experiment and attempt to apply new concepts. The projects
-                        shown below are a sample of my smaller projects in spare time and assignments from some of my
-                        computer related courses.   
+                        As is essential for learning I push myself to experiment and attempt to apply new concepts. The projects
+                        shown below are a sample of some smaller projects completed in my spare time and assignments from some 
+                        programming related courses.   
                     </p>
                 </div>
                 <div class="samples">
@@ -150,35 +164,40 @@
                             </a>
                             <p>
                                 This is a game that I along with two other devolpers created. My contribution to this project
-                                primarily entailed designing and making the core mechanics and the way the different objects
+                                primarily entailed designing and making the core mechanics and how different objects
                                 within the game are managed. 
                             </p>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div id="item4">
+            <div id="webpage" class="dupeRec grid">
                 <h1>Development of this Website</h1>
                 <div class="desc">
                     <p>
-                        I resently decided that a functional understanding of website development would be a useful skill to posess.
-                        There are many versitle web dev tools like wordpress and squarespace, however I felt that if I wanted to 
-                        fully understand a website I would have to delve into the foundational HTML, CSS and Javascript. Therefore
-                        I developed this website entirely bottom up in a text editor rather than an assistive API. It took me about
-                        a month of working evenings on this project to develop something presentable, but I now have a solid foundational
-                        undersanding of backend website development. 
+                        I recently decided that a functional understanding of website development would be a useful skill to posess.
+                        While there are many versitle web dev tools like wordpress and squarespace I felt that in order to
+                        fully understand a the front end of a website I would have to delve into the foundational HTML, CSS and Javascript. Therefore
+                        I developed this website entirely bottom up in a code editor rather than an using assistive programs. After
+                        many hours of fighting with CSS formatting, creating redundant javascript functions, and 
+                        typing 'How to' into google I finally was left with a preseantable website that I am proud of.  
                     </p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     
-    <footer>
-        <a href="https://www.instagram.com/joel_r_weber/" class="fa fa-instagram"></a>
-        <a href="#" class="fa fa-linkedin"></a>
-        <a id="logo" href="index.htm">JW</a>
-        <span id="contact">
+    <footer id="information" class=" col-l-12 col-s-12 side **le06 *s*le00 *xs*le00     ">
+        <span id="social">
+            <a id="ig" href="https://www.instagram.com/joel_r_weber/" class="fa fa-instagram"></a>
+            <a id="ld" href="#" class="fa fa-linkedin"></a>
+        </span>
+        
+        <span></span><a id="footLogo" class="cent **-x logo" href="index.htm">JW</a></span>
+
+        <span id="contact" class="txtSet txtRstc20   fontSz0.8rem ">
             <a href="mailto:joelweberdevelopment@gmail.com" class="email">joelweberdevelopment@gmail.com</a>
         </span>
     </footer>
+    <script>postContLoad();</script>
 </body>

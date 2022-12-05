@@ -1,3 +1,28 @@
+<!-- Naming discrepencies
+    IMPORTANT!! Ensure that when using these shortcuts the element where it is being implemented has a unique id
+- resp: titles an element as responsive for a specific feature and hence it will change st differeing sizes
+- marg: indactor that there is margin that will be set by a javascript funtion based on the specific screen resolution 
+- dupe: this is followed by parantheses that indacate something to be duplicated to child elements
+- dupeRec: the reciever for the feature to be duplicated
+- txtFt: Make the text fit to the container rather than a retaining a defined size
+- standard: Works with changeRec to make set a parent relative to the dimension of the standard class
+- changeRec: Is the recipient of the dimension parameters of the standard class
+- txtSet: This specifies that some form of paramters are going to be imposed upon the content text and will be handled with javascript-->
+
+
+<!-- Evening Goals:
+- Responsive footer
+- Nav menu
+    - Make the bottom of DOM align with the footer
+- Revise content
+
+- Sticky header
+    - Ensure that the side bar does not interfere with the regurgitation of the remainder of the content
+    - Ensure that the header dones not get too large on an small screen
+    - Remove the left border from the header
+
+- -->
+
 <!DOCTYPE html>
 
 <html lang='en'>
@@ -25,65 +50,69 @@
 
 <body>
     <header id="genBan" class="col-o-12">
-        <a id="logo" class="col-o-1" href="index.htm">JW</a>
-        <h1 id="name"><u>|  Joel Weber  |</u></h1>
+        <div id="logo-area" class="col-o-12 dupe- (txtSet,txtRstc0.5,fontSz1.5rem,col-o-1,logo)">
+            <a id="initals" class="lgScreen dupeRec" href="index.htm">JW</a>
+            <i id="pile" class="fa fa-bars dupeRec" aria-hidden="true"></i>
+            <h1 id="name" class=""><u>|  Joel Weber  |</u></h1>
+        </div>
     </header>
-    <div class="break col-o-11 side -le06">
-        <br>
+    <!-- <div id="break" class="resp">
         <hr id="line">
-    </div>
+    </div> -->
 
-    <nav class="menu col-o-1">        
-        <ul id="pages">
+    <nav id="menu" class="col-l-1 col-s-4 col-xs-6  ">        
+        <ul id="pages" class="txtSet txtRstc3.7 fontSz1rem">
             <li>
-                <a href="index.htm">
+                <a id="home" href="index.htm">
                     <span class="icon"></span>
                     <span class="title">Home</span>
                 </a>
             </li>
             <li>
-                <a href="PortfolioAboutMe.htm">
+                <a id="about" href="PortfolioAboutMe.htm">
                     <span class="icon"></span>
                     <span class="title">About</span>
                 </a>
             </li>
             <li>
-                <a href="PortfolioProjects.htm">
+                <a id="projects" href="PortfolioProjects.htm">
                     <span class="icon"></span>
                     <span class="title">Projects</span>
                 </a>
             </li>
             <li>
-                <a href="PortfolioResume.htm">
+                <a id="resume" href="PortfolioResume.htm">
                     <span class="icon"></span>
                     <span class="title">Resume</span>
                 </a>
             </li>
         </ul>
     </nav>
-    
-    <div class="primary col-o-11 side -le06 pos-r">
-        <div class="vidintro">
-            <h1 id="primtitle">Transforming Ideas Into Reality</h1>
+
+    <div id="primary" class="col-xl-11 col-l-11 col-s-12 col-xs-12 transp base:menu">
+        <div id="vidintro" class="">
+            <h1 id="statement" class="primtitle txtSet txtRstc10 fontSz5rem">Transforming Ideas Into Reality</h1>
         </div>
     
 
-        <div class="contentsct">
-            <div class="leftsct col-o-6">
-                <p id="moto">An Inspired 
+        <div id="contentsct" class="changeRec">
+            <div id="leftsct" class="col-o-6 side ">
+                <p id="moto" class="txtSet standard txtRstc6 fontSz7rem">An Inspired 
                     and Aspiring 
-                    Software Developer</p>
+                    Software Developer
+                </p>
             </div>
-            <div class="cenln cent -x"></div>
-            <div class="rightsct col-o-6">
+            <div id="cenln" class="cent **-x"></div>
+            <div id="rightsct" class="col-o-6">
                 <img src="Images\PXL_20220911_184128395.PORTRAIT.jpg">
             </div>
-            
-            <!-- <div class="quoteSct"> -->
-            <svg id="triangle" viewbox="100 5 28 19" width="100%" height="70%">
-                <polygon points="200 15, 0 0, 0 30" style="fill:rgb(33, 33, 41); stroke: rgb(36, 130, 98); stroke-width: 0.7px;" />
-            </svg>
-            <div id="quoteCont" class="col-o-12">
+        </div>
+        
+        <div id="quoteSct" class="txtSet txtRstc40 fontSz0.8rem" >
+            <!-- <svg id="triangle" viewbox="100 5 47 25" width="100%" height="100%"  class="expand sib_1">
+                <polygon points="200 15, 0 0, 0 30" style="fill:rgb(33, 33, 41); stroke: rgb(36, 130, 98); stroke-width: 0.3px;" />
+            </svg> -->
+            <div id="quoteCont" class="col-o-12 ">
                 <blockquote>
                     <p>"As a student, Joel had a passion to learn about computer science and design projects that had real 
                         world functionality.  He takes initiative in his projects, dealing with problems as they arise and 
@@ -92,57 +121,67 @@
                         his mistakes and thoughtfully integrates feedback into future iterations of his work.  "</p>
                     <cite>
                         Michael Chmatil - <br>
-                        - High School Computer Educator
+                        - High School Technology and Computer Educator
                     </cite>
                 </blockquote>
             </div>
-            <!-- </div> -->
         </div>
-<!-- STOP POINT  -->
-<!-- Make the three hoizontally aligned items align vertically when the size becomes small -->
-        <div class="secondsct col-o-12">
-            <h1 id="primtitle">Myself Currently</h1>
-            <div id="pageconts" class="dupe- (col-xl-4,col-l-4,col-s-4,col-xs-11)">
-                <div id="item1" class="dupeRec">
+
+
+        <div id="secondsct" class="col-o-12">
+            <h1 class="primtitle">Myself Currently</h1>
+            <div id="pageconts" class="txtSet txtRstc100 fontSz0.8rem dupe- (col-xl-4,col-l-4,col-s-12,col-xs-12) ">
+                <div id="item1" class="dupeRec ">
                     <a href="PortfolioProjects.htm" id="title">Recent Projects</a>
                     <p>
-                        I have been given increadible opportunities to develop and participate in an expansive variety of 
-                        projects relavant to computer science. These projects have fueled a passion and desire to not 
-                        only learn more, but also to design, develop and create products to assist businesses and to automate 
-                        systems.
+                        I have been given incredible opportunities to develop and participate 
+                        in an expansive variety of projects relevant to computer science. These
+                        projects have fueled a passion and desire to not only learn more, but 
+                        also to design, develop and create products to assist businesses and to 
+                        automate systems especially in fields of agricultural and management interfaces. 
                     </p>
                 </div>
                 <div id="item2" class="dupeRec">
                     <a href="PortfolioAboutMe.htm" id="title">More About Me</a>
                     <p>
-                        I grew up in agricultural Ontario near Listowel where I obtained a respect for and desire to help the strong 
-                        farming. When I am not engaged with work at my computer I love to play sports, go back country camping,
-                        build quirky gadgets, listen to podcasts and explore Ontario. I also am a person who loves God desires to 
-                        represent Christ in every aspect of my life.
+                        I grew up in rural Ontario near Listowel where I attended high school and nurtured a desire to 
+                        develop automated solutions to drive efficiency through both web and robotics applications. When 
+                        I am not programming, I love to play sports, go back country camping, concoct quirky gadgets, listen 
+                        to podcasts and explore Ontario. Furthermore, I am a person who loves God desires to represent 
+                        Christ in every aspect of my life.
                     </p>
                 </div>
                 <div id="item3" class="dupeRec">
                     <a href="PortfolioResume.htm" id="title">The Resume</a>
                     <p>
-                        As an early developer just scratcing the surface of computer science I have an abundance initiative to
-                        tackle challenging tasks in combination with a strong sense of discipline to carry a project through to
-                        completion. I enjoy projects that challenge me to learn an apply new skills which will aid me in future 
-                        tasks. 
+                        As an early developer just discovering the power of computer science, I seek to maintain initiative 
+                        in challenging tasks while employing a strong sense of discipline to carry a project through to 
+                        completion. Projects like building a functional webpage to training a machine learning models to 
+                        recognize soybeans pushed me to learn new skills to establish an understanding of the entire system 
+                        while also providing the opportunity to hone my existing competence.
                     </p>
                 </div>
             </div>
         </div>
+        
     </div>
-    <footer class="col-o-11 side -le06">
-        <a href="https://www.instagram.com/joel_r_weber/" class="fa fa-instagram side -le20"></a>
-        <a href="#" class="fa fa-linkedin side -le25"></a>
-        <a id="logo" class="cent -x" href="index.htm">JW</a>
-        <span id="contact" class="side -le65">
+    
+    <footer id="information" class=" col-l-12 col-s-12 side **le06 *s*le00 *xs*le00     ">
+        <span id="social">
+            <a id="ig" href="https://www.instagram.com/joel_r_weber/" class="fa fa-instagram"></a>
+            <a id="ld" href="#" class="fa fa-linkedin"></a>
+        </span>
+        
+        <span></span><a id="footLogo" class="cent **-x logo" href="index.htm">JW</a></span>
+
+        <span id="contact" class="txtSet txtRstc20   fontSz0.8rem ">
             <a href="mailto:joelweberdevelopment@gmail.com" class="email">joelweberdevelopment@gmail.com</a>
         </span>
     </footer>
 </body>
 
-<script>postContLoad();</script>
+<script>
+    postContLoad("CSS/HomeStyle.css");
+</script>
 
 </html>

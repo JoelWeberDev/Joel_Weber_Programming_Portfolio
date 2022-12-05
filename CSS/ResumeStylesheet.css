@@ -1,93 +1,115 @@
 @import url(GenericElements.css);
 
-.primaryCont{
-    position: relative;
-    width:94%;
-    left:6%;
-    /* text-align: center; */
+@media only screen and (max-width: 1024px) {
+    #chars h3{
+        width:75%;
+        font-size: 1.3em;
+    }
 }
 
-.primaryCont .container{
+@media only screen and (min-width: 1024px) {
+    #chars h3{
+        width:75%;
+        font-size: 1.7em;
+    }
+}
+
+:root{
+    --expfontsz: 1rem;
+    --bkgroundfontsz: 1rem;
+    --charsfontsz: 1rem;
+}
+
+#primary .container{
     margin:2%;
     border: 1rem solid rgb(33, 33, 41); 
-    height: 100rem;
+    height: auto;
 }
 
-.primaryCont header{
+#bkground{
+    font-size: var(--bkgroundfontsz);
     text-align:center;
     background-color: rgba(64, 64, 125,0.5);
 }
 
-.primaryCont #title{
-    font-size: 3rem;
+#primary #title{
+    font-size: 3em;
     text-decoration: underline;
 }
 
 .divis{
     position: relative;
-    /* display: block; */
     height:0.5rem;
     background-color: rgb(36, 130, 98);
     border: 0.2rem solid rgba(64, 64, 125,0.5);
 }
 
-.primaryCont .Cont{
-    display: inline-grid;
-}
-
-.primaryCont .compitencies div{
+#primary .compitencies div{
     margin: 2% 2% 6% 2%;
 }
 
-.primaryCont .Cont h2{
+#primary .Cont h2{
     margin-bottom: 1%;
     color: rgb(33, 33, 41);
     text-decoration: underline;
-    font-size:2.2rem;
+    font-size:2.2em;
 }
 
-.primaryCont .Cont h3{
+#primary .Cont h3{   
     color: rgb(36, 130, 98);
     margin-left:3%;
-    font-size:1.7rem;
 }
 
-.primaryCont .Cont .firstBul li{
+
+
+#exp{
+    font-size: var(--expfontsz);
+    width:95%;
+    margin: 2% 1% 2% 5%;
+}
+
+#exp h3{
+    font-size:1.7em;
+}
+
+#exp .firstBul li{
     color: whitesmoke;
     margin-left:10%;
-    font-size:1.2rem;
+    font-size:1em;
 }
 
 .jobs a{
     color: whitesmoke;
 }
 
-.left{
-    width:58%;
-    margin: 2% 1% 2% 5%;
-}
 
-.right{
-    border: 0.25rem solid rgba(64, 64, 125,1);
+#chars{
+    text-align: justify;
+    display: inline-grid;
+    word-break:break-word;
+    font-size: var(--charsfontsz);
+    border: 0.5em solid rgba(64, 64, 125,1);
     float: right;
     width:32%;
     padding:3%;
     margin: 2%;
 }
 
-.right .skills ul{
+#chars div{
+    text-align: left;
+
+}
+
+#chars .skills ul{
+    flex-direction: column;
     list-style: none;
 }
-/* .right .skills{
-
-} */
-
-
 .contact a{
-    font-size: 1.25rem;
+    font-size: 1.25em;
     color: rgb(36, 130, 98);
     display: inline-block;
-    margin: 3% 0 3% 5%;    
+    margin: 3% 0 3% 5%;   
+    /* text-decoration: none;  */
 }
 
 .skills ul li{
@@ -95,10 +117,10 @@
 }
 
 .skills ul li svg{
-    float: right;
+    float: right;    
     align-items: center;
-    -ms-transform: translateY(-70%); 
-    transform: translateY(-70%);
+    /* -ms-transform: translateY(-70%); 
+    transform: translateY(-70%); */
 }
 
 .skills svg text{
@@ -108,13 +130,13 @@
 
 .awards ul li{
     margin: 1% 0 3% 10%;
-    font-size: 1.2rem;
+    font-size: 1.2em;
     color: whitesmoke;
     font-weight: bold;
 }
 
 /* .fa-phone{
-    float: left;
+    float: #;
     margin-left:70%;
 }
 

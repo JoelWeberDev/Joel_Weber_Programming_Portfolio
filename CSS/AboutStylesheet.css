@@ -3,10 +3,37 @@
 
 /* Special Resposnive Styling */
 
+@media only screen and (max-width: 1024px) {
+    #Visions div{display: inline-block;}
+    #Visions #development{position: relative;}
+    #Avocations{
+        align-items: center;
+        flex-direction: column;
+        order: -1
+    }
+    #Avocations :nth-child(1) { order:2; }
+    #Avocations :nth-child(2) { order:1; }
+    #Avocations :nth-child(3) { order:3; }  
+    #Avocations div{font-size: 3em};
+    section{
+        padding: 3rem;
+    }
+}
 
-@media only screen and (min-width: 1024px) {}
+@media only screen and (min-width: 1024px) {
+    #Avocations{flex-direction: row;}
+    section{
+        padding: 3rem;
+    }
+}
 
-@media only screen and (min-width: 1320px) {}
+
+
+:root {
+    --Passionsfontsz: 2.5rem;
+    --Avocationsfontsz: 2.5rem;
+    --Visionsfontsz: 2.5rem;
+}   
 
 h1{
     text-decoration: underline;
@@ -28,18 +55,18 @@ p {
     letter-spacing: .050rem;
 }
 
-section{
-    padding: 3rem;
-}
+
 #Passions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: var(--Passionsfontsz);
     background-color: rgb(33, 33, 41);
     border:0.13rem solid whitesmoke;
-    text-align: left;
 }
 
 #Passions div{
     display:inline-block;
-    margin:2%;
     background-color: rgb(33, 33, 41);
     border:0.13rem solid rgb(36, 130, 98);
 }
@@ -61,66 +88,66 @@ section{
 }
 
 #Passions div p{
+    font-size: 0.8em;
     margin: 2% 40% 3% 5%;
 }
 
-.Images{
+#images{
     text-align: center;
 }
 
-.Images img{
+#images img{
 
     height:auto;
     margin:5% 0 5% 0 ;
 }
 
 #Avocations{
+    display: flex;
+    justify-content: space-around;
+    padding:3%;
+    font-size: var(--Avocationsfontsz);
     background-color: rgb(33, 33, 41);
     border:0.13rem solid whitesmoke;
     text-align: center;
-    
 }
 
+
 #Avocations div{
-    display: inline-block;
     border:0.13rem solid rgb(36, 130, 98);
     vertical-align: top;
 }
 
 #Avocations #title{
-    width: 30%;
     border: none;
     -ms-transform: translateY(-5%); 
     transform: translateY(-5%);
 }
 
 #Avocations #indtitle{
-    font-size: 4rem;
+    font-size: 4em;
     text-align: center;
 }
 
+#Avocations h2{
+    font-size: 2em;
+}
+
 #Avocations .activites{
+    font-size: 1em;
     list-style: none;
 }
 
 #Avocations .shift{
-    font-size: 1.3rem;
-    width:2rem;
-    height: 2rem;
+    font-size: 1.3em;
+    width:10%;
+    aspect-ratio: 1/1;
+    /* height: auto; */
     border-radius: 50%;
     background-color: rgba(36, 130, 98, 0.5);
+    border: 0.1em, solid, rgb(33, 33, 41);
     margin-bottom: 2%;
-    /* position: absolute; */
 }
-
-#Avocations .right{
-    float: right;
-}
-
-#Avocations .left{
-    float: left;
-}
-
 
 #Avocations .imgCaros img{
     display: flex;
@@ -138,19 +165,19 @@ section{
 }
 
  #Visions{
-    height: auto;
+    /* height: auto; */
     display: block;
+    font-size: var(--Visionsfontsz);
 }
 
  #Visions h1{
+    font-size: 3em;
     padding-bottom: 5%;
     text-align: left;
 }
 
  #Visions div{
     border: 0.13rem solid rgb(33, 33, 41);
-    /* display: inline-block; */
-    /* width: 30%; */
     padding:2%;
     text-align: center;
 }
@@ -177,7 +204,7 @@ section{
 }
 
  #Visions #school img{
-    width: 80%;
+    width: 60%;
     height: auto;
     margin-top: 2%;
 }

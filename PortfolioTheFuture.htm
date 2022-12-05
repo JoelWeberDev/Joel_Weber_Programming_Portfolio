@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+    <!-- Support modules -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="nodeJS_npm\node_modules\textfit\textFit.min.js"></script>
+    <!-- Primary javascript -->
+    <script src="JS/test.js"></script>
+    <script type="text/javascript">
+        function doFit() {
+            console.log("deb");
+            textFit($(".txtFt"),{minFontSize:1,maxFontSize:1000,multiline:true});
+        }
+        $(document).ready(function() {
+            doFit();
+        })
+        $( window ).resize(function() {
+            doFit();
+        });
+    </script>
+</head>
+
+<body>
+    <!-- <div id="Test_cont" class="txtFt" style="width:30%;height:600px;border: 10px solid black; ">
+        Please fit this text!! It is a massive statement that assists me with the practice of violating the DRY concept by providing opportunity for exessive typing
+    </div> -->
+    <svg id="triangle" viewbox="100 5 47 25" width="100%" height="10%">
+        <polygon points="200 15, 0 0, 0 30" style="fill:rgb(33, 33, 41); stroke: rgb(36, 130, 98); stroke-width: 0.3px;" />
+    </svg>
+</body>

@@ -1,3 +1,17 @@
+<!-- Responsive design for this page! 
+    - Ensure that when the screen width is very small that the content sizes to ensure that it maintains readability
+    - Put the revised header and footer in
+    - Ensure that the resume text stays large enough and appealing proportions
+    - Make the skills svgs responsive
+    - Make the contact info break when it exceed the width of the containing element
+    - Ensure that the text fits and resizes properly in all the content boxes -->
+<!-- Page content revision 
+    - Add images of the soybean controller
+    - Make the iniaial title more interesting
+    - Add images of myself programming
+    - Add the dishwasher project
+    - Word break skills  section to accomodate large words  
+-->
 <!DOCTYPE html>
 
 <html lang='en'>
@@ -6,54 +20,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="CSS\ResumeStylesheet.css">
-    <meta charset="UTF-8">
-    <script src="JS\GenericImp.js"></script>
+    <!-- <script rel="javascript" src="JS\GenericImp.js"></script> -->
+    <!-- Jquery source code -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="JS\cssSizing.js"></script>
+    <!-- resizing functionality -->
+    <script type="text/javascript" src="JS\cssSizing.js" id="pageSetup"></script>
+    <!-- Futher page setup -->
+    <meta charset="UTF-8">
     <title>Projects</title>
 </head>
 
 <body>
-    <header id="genBan">
-        <a id="logo" href="index.htm" onclick="check()">JW</a>
-        <h1 id="name"><u>|  Joel Weber  |</u></h1>
+    <header id="genBan" class="col-o-12">
+        <div id="logo-area" class="col-o-12 dupe- (txtSet,txtRstc0.5,fontSz1.5rem,col-o-1,logo)">
+            <a id="initals" class="lgScreen dupeRec" href="index.htm">JW</a>
+            <i id="pile" class="fa fa-bars dupeRec" aria-hidden="true"></i>
+            <h1 id="name" class=""><u>|  Joel Weber  |</u></h1>
+        </div>
     </header>
-    <div class="break">
-        <br>
+    <div id="break" class="resp">
         <hr id="line">
     </div>
 
-    <nav class="menu">        
-        <ul id="pages">
+    <nav id="menu" class="col-l-1 col-s-4 col-xs-5">        
+        <ul id="pages" class="txtSet txtRstc3.7 fontSz1rem">
             <li>
-                <a href="index.htm" onclick="check()">
+                <a id="home" href="index.htm">
                     <span class="icon"></span>
                     <span class="title">Home</span>
                 </a>
             </li>
             <li>
-                <a href="PortfolioAboutMe.htm" onclick="check()">
+                <a id="about" href="PortfolioAboutMe.htm">
                     <span class="icon"></span>
                     <span class="title">About</span>
                 </a>
             </li>
             <li>
-                <a href="PortfolioProjects.htm" onclick="check()">
+                <a id="projects" href="PortfolioProjects.htm">
                     <span class="icon"></span>
                     <span class="title">Projects</span>
                 </a>
             </li>
             <li>
-                <a href="PortfolioResume.htm" onclick="check()">
+                <a id="resume" href="PortfolioResume.htm">
                     <span class="icon"></span>
                     <span class="title">Resume</span>
                 </a>
             </li>
         </ul>
     </nav>
-    <section class="primaryCont">
+
+
+    <section id="primary" class="col-l-11 col-s-12 col-xs-12 side **le06 *s*le00 *xs*le00 pos-r transp base:menu">
         <div class="container">
-            <header>
+            <header id="bkground" class="txtSet txtRstc30 fontSz1.7rem">
                 <h1 id="title">Joel Weber</h1>
                 <div class="desc">
                     <h2>Computer Science Enthusiast and Self Taught Programmer</h2>
@@ -65,7 +86,102 @@
                 <hr class="divis">
             </header>
           
-            <div class="left Cont">
+            <div id="chars" class="Cont txtSet txtRstc10 fontSz1rem">
+                <div class="contact">
+                    <h2>Contact</h2>
+                    <a class="fa fa-address-book" href="https://www.google.com/maps/place/9068+Road+146,+North+Perth,+ON+N0G+2P0/@43.7747601,-80.8525827,15.18z/data=!4m5!3m4!1s0x882961b099bfe4eb:0x8676a917fd559f8f!8m2!3d43.7755466!4d-80.8394206">
+                        9068 Road 146, Gowanstown, ON N0G 1Y0
+                    </a>
+                    <a href="mailto:joelweberdevelopment@gmail.com" class="fa fa-envelope">joelweberdevelopment@gmail.com</a>
+                    <a href="tel:2266229943" class="fa fa-phone">226-622-9943</a>
+                </div>
+                <div class="skills">
+                    <h2>Key Skills</h2>
+                    <ul>
+                        <li>
+                            <svg class="rank" viewbox="0 0 100 100" width="20%" height="20%">
+                                <circle cx="50" cy="50" r="40" style="stroke:rgb(33, 33, 41); stroke-width:16px; fill:rgb(36, 130, 98);"/>
+                                <path d="M50 10 A 40 40 0 0 1 50 10" style="stroke:rgb(49, 67, 78); stroke-width:16px ; fill:none;"/>
+                                <text x="41" y="57" >E</text>
+                            </svg>
+                            <h3>Time Management:</h3>
+                            
+                        </li>
+                        <li>
+                            <svg class="rank" viewbox="0 0 100 100" width="20%" height="20%">
+                                <circle cx="50" cy="50" r="40" style="stroke:rgb(33, 33, 41); stroke-width:16px; fill:rgb(36, 130, 98);"/>
+                                <path d="M50 10 A 40 40 0 0 1 50 10" style="stroke:rgb(49, 67, 78); stroke-width:16px ; fill:none;"/>
+                                <text x="41" y="57" >E</text>
+                            </svg>
+                            <h3>Initiative:</h3>
+                            
+                        </li>
+                        <li>
+                            <svg class="rank" viewbox="0 0 100 100" width="20%" height="20%">
+                                <circle cx="50" cy="50" r="40" style="stroke:rgb(33, 33, 41); stroke-width:16px; fill:rgb(36, 130, 98);"/>
+                                <path d="M50 10 A 40 40 0 0 1 90 50" style="stroke:rgb(49, 67, 78); stroke-width:16px ; fill:none;"/>
+                                <text x="41" y="57" >G</text>
+                            </svg>
+                            <h3>Problem Solving:</h3>
+                            
+                        </li>
+                        <li>
+                            <svg class="rank" viewbox="0 0 100 100" width="20%" height="20%">
+                                <circle cx="50" cy="50" r="40" style="stroke:rgb(33, 33, 41); stroke-width:16px; fill:rgb(36, 130, 98);"/>
+                                <path d="M50 10 A 40 40 0 0 1 90 50" style="stroke:rgb(49, 67, 78); stroke-width:16px ; fill:none;"/>
+                                <text x="41" y="57" >G</text>
+                            </svg>
+                            <h3>Research:</h3>
+                            
+                        </li>
+                        <li>
+                            <svg class="rank" viewbox="0 0 100 100" width="20%" height="20%">
+                                <circle cx="50" cy="50" r="40" style="stroke:rgb(33, 33, 41); stroke-width:16px; fill:rgb(36, 130, 98);"/>
+                                <path d="M50 10 A 40 40 0 0 1 90 50" style="stroke:rgb(49, 67, 78); stroke-width:16px ; fill:none;"/>
+                                <text x="38" y="57" >G</text>
+                            </svg>
+                            <h3>Learning:</h3>
+                            
+                        </li>
+                        <li>
+                            <svg class="rank" viewbox="0 0 100 100" width="20%" height="20%">
+                                <circle cx="50" cy="50" r="40" style="stroke:rgb(33, 33, 41); stroke-width:16px; fill:rgb(36, 130, 98);"/>
+                                <path d="M50 10 A 40 40 0 0 1 90 50" style="stroke:rgb(49, 67, 78); stroke-width:16px ; fill:none;"/>
+                                <text x="38" y="57" >G</text>
+                            </svg>
+                            <h3>Strategic Planning:</h3>
+                            
+                        </li>
+                        <li>
+                            <svg class="rank" viewbox="0 0 100 100" width="20%" height="20%">
+                                <circle cx="50" cy="50" r="40" style="stroke:rgb(33, 33, 41); stroke-width:16px; fill:rgb(36, 130, 98);"/>
+                                <path d="M50 10 A 40 40 0 0 1 50 90" style="stroke:rgb(49, 67, 78); stroke-width:16px ; fill:none;"/>
+                                <text x="37" y="57" >M</text>
+                            </svg>
+                            <h3>Communication:</h3>
+                            
+                        </li>
+                        <li>
+                            <svg class="rank" viewbox="0 0 100 100" width="20%" height="20%">
+                                <circle cx="50" cy="50" r="40" style="stroke:rgb(33, 33, 41); stroke-width:16px; fill:rgb(36, 130, 98);"/>
+                                <path d="M50 10 A 40 40 0 0 1 50 90" style="stroke:rgb(49, 67, 78); stroke-width:16px ; fill:none;"/>
+                                <text x="37" y="57" >M</text>
+                            </svg>
+                            <h3>Creativity:</h3>
+                            
+                        </li>
+                    </ul>
+                </div>
+                <div class="awards">
+                    <h2>Awards and Honors</h2>
+                    <ul>
+                        <li>Honor role grade 9-12</li>
+                        <li>Graduation with 94.83% average</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="exp" class="left Cont txtSet txtRstc30 fontSz1.5rem">
                 <div class="compitencies">
                     <h2>Compitencies</h2>
                     <div class="prog">
@@ -145,110 +261,25 @@
                             </li>
                     </div>
                 </div>
-                    
                 
             </div>
 
-            <div class="right Cont">
-                <div class="contact">
-                    <h2>Contact</h2>
-                    <a class="fa fa-address-book" href="https://www.google.com/maps/place/9068+Road+146,+North+Perth,+ON+N0G+2P0/@43.7747601,-80.8525827,15.18z/data=!4m5!3m4!1s0x882961b099bfe4eb:0x8676a917fd559f8f!8m2!3d43.7755466!4d-80.8394206">
-                        9068 Road 146, Gowanstown, ON N0G 1Y0
-                    </a>
-                    <a href="mailto:joelweberdevelopment@gmail.com" class="fa fa-envelope">joelweberdevelopment@gmail.com</a>
-                    <a href="tel:2266229943" class="fa fa-phone">226-622-9943</a>
-                </div>
-                <div class="skills">
-                    <h2>Key Skills</h2>
-                    <ul>
-                        <li>
-                            <h3>Time Management:</h3>
-                            <svg class="rank" viewbox="0 0 100 100" width="20%" height="20%">
-                                <circle cx="50" cy="50" r="40" style="stroke:rgb(33, 33, 41); stroke-width:16px; fill:rgb(36, 130, 98);"/>
-                                <path d="M50 10 A 40 40 0 0 1 50 10" style="stroke:rgb(49, 67, 78); stroke-width:16px ; fill:none;"/>
-                                <text x="41" y="57" >E</text>
-                            </svg>
-                        </li>
-                        <li>
-                            <h3>Initiative:</h3>
-                            <svg class="rank" viewbox="0 0 100 100" width="20%" height="20%">
-                                <circle cx="50" cy="50" r="40" style="stroke:rgb(33, 33, 41); stroke-width:16px; fill:rgb(36, 130, 98);"/>
-                                <path d="M50 10 A 40 40 0 0 1 50 10" style="stroke:rgb(49, 67, 78); stroke-width:16px ; fill:none;"/>
-                                <text x="41" y="57" >E</text>
-                            </svg>
-                        </li>
-                        <li>
-                            <h3>Problem Solving:</h3>
-                            <svg class="rank" viewbox="0 0 100 100" width="20%" height="20%">
-                                <circle cx="50" cy="50" r="40" style="stroke:rgb(33, 33, 41); stroke-width:16px; fill:rgb(36, 130, 98);"/>
-                                <path d="M50 10 A 40 40 0 0 1 90 50" style="stroke:rgb(49, 67, 78); stroke-width:16px ; fill:none;"/>
-                                <text x="41" y="57" >G</text>
-                            </svg>
-                        </li>
-                        <li>
-                            <h3>Research:</h3>
-                            <svg class="rank" viewbox="0 0 100 100" width="20%" height="20%">
-                                <circle cx="50" cy="50" r="40" style="stroke:rgb(33, 33, 41); stroke-width:16px; fill:rgb(36, 130, 98);"/>
-                                <path d="M50 10 A 40 40 0 0 1 90 50" style="stroke:rgb(49, 67, 78); stroke-width:16px ; fill:none;"/>
-                                <text x="41" y="57" >G</text>
-                            </svg>
-                        </li>
-                        <li>
-                            <h3>Learning:</h3>
-                            <svg class="rank" viewbox="0 0 100 100" width="20%" height="20%">
-                                <circle cx="50" cy="50" r="40" style="stroke:rgb(33, 33, 41); stroke-width:16px; fill:rgb(36, 130, 98);"/>
-                                <path d="M50 10 A 40 40 0 0 1 90 50" style="stroke:rgb(49, 67, 78); stroke-width:16px ; fill:none;"/>
-                                <text x="38" y="57" >G</text>
-                            </svg>
-                        </li>
-                        <li>
-                            <h3>Strategic Planning:</h3>
-                            <svg class="rank" viewbox="0 0 100 100" width="20%" height="20%">
-                                <circle cx="50" cy="50" r="40" style="stroke:rgb(33, 33, 41); stroke-width:16px; fill:rgb(36, 130, 98);"/>
-                                <path d="M50 10 A 40 40 0 0 1 90 50" style="stroke:rgb(49, 67, 78); stroke-width:16px ; fill:none;"/>
-                                <text x="38" y="57" >G</text>
-                            </svg>
-                        </li>
-                        <li>
-                            <h3>Communication:</h3>
-                            <svg class="rank" viewbox="0 0 100 100" width="20%" height="20%">
-                                <circle cx="50" cy="50" r="40" style="stroke:rgb(33, 33, 41); stroke-width:16px; fill:rgb(36, 130, 98);"/>
-                                <path d="M50 10 A 40 40 0 0 1 50 90" style="stroke:rgb(49, 67, 78); stroke-width:16px ; fill:none;"/>
-                                <text x="37" y="57" >M</text>
-                            </svg>
-                        </li>
-                        <li>
-                            <h3>Creativity:</h3>
-                            <svg class="rank" viewbox="0 0 100 100" width="20%" height="20%">
-                                <circle cx="50" cy="50" r="40" style="stroke:rgb(33, 33, 41); stroke-width:16px; fill:rgb(36, 130, 98);"/>
-                                <path d="M50 10 A 40 40 0 0 1 50 90" style="stroke:rgb(49, 67, 78); stroke-width:16px ; fill:none;"/>
-                                <text x="37" y="57" >M</text>
-                            </svg>
-                        </li>
-                    </ul>
-                </div>
-                <div class="awards">
-                    <h2>Awards and Honors</h2>
-                    <ul>
-                        <li>Honor role grade 9-12</li>
-                        <li>Graduation with 94.83% average</li>
-                    </ul>
-                </div>
-            </div>
+            
 
         </div>  
     </section>
 
-    <section class="download">
+    <footer id="information" class=" col-l-12 col-s-12 side **le06 *s*le00 *xs*le00     ">
+        <span id="social">
+            <a id="ig" href="https://www.instagram.com/joel_r_weber/" class="fa fa-instagram"></a>
+            <a id="ld" href="#" class="fa fa-linkedin"></a>
+        </span>
+        
+        <span></span><a id="footLogo" class="cent **-x logo" href="index.htm">JW</a></span>
 
-    </section>
-
-    <footer>
-        <a href="https://www.instagram.com/joel_r_weber/" class="fa fa-instagram"></a>
-        <a href="#" class="fa fa-linkedin"></a>
-        <a id="logo" href="index.htm">JW</a>
-        <span id="contact">
+        <span id="contact" class="txtSet txtRstc20   fontSz0.8rem ">
             <a href="mailto:joelweberdevelopment@gmail.com" class="email">joelweberdevelopment@gmail.com</a>
         </span>
     </footer>
+    <script>postContLoad();</script>
 </body>

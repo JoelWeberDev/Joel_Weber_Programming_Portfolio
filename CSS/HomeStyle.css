@@ -1,92 +1,102 @@
 @import url(GenericElements.css);
 
-/* .primary{} */
-
-.vidintro{
-    position: relative;
-    width: 94%;
-    left: 6%;
-    text-align: center;
-    border:0.125rem solid whitesmoke;
-    
+:root {
+    --motofontsz:7rem;
+    --motorem:calc(var(--motofontsz)/7);
+    --quoteSctY:0rem;
+    --quoteSctfontsz:1rem;
+    --statementfontsz:5rem;
+    --pagecontsctfontsz:0.8rem;
 }
 
-.vidintro #primtitle{
+#primary {
+    text-align: center;
+}
+
+#vidintro{
+    font-size:var(--statementfontsz) ;
+    text-align: center;
+    border:0.125rem solid whitesmoke;
+}
+
+.primtitle{
+    font-size:2.5rem
+}
+
+#vidintro .primtitle{
+    font-size: 1em;
     position: relative;
     margin: 15% 0 15% 0;
 }
 
 /* Content formatting */
-.contentsct{
+#contentsct{
     position: relative;
-    /* display: block; */
-    /* padding-bottom: 100px; */
-    width: 94%;
-    left: 6%;
-    height: 46.875rem;
     z-index: 1;
-    margin-bottom: 10rem;
+    font-size: var(--motorem);
 }
 
-
-.cenln{
-    position: absolute;
+#cenln{
     top:0%;
     width: 4%;
     height: 100%;
     background-color: rgb(33, 33, 41);
-    border: 0.625rem solid rgb(36, 130, 98);
+    border: 0.625em solid rgb(36, 130, 98);
     margin: 0 auto;
-    left:50%;
-    -ms-transform: translateX(-50%); 
-    transform: translateX(-50%);
     z-index: 2;
-    /* padding: 0.0625rem; */
 }
 
-.leftsct{
+#leftsct{
     float: left;
-    top:0%;
-    width: 48%;
     height: 100%;
+    /* left:-6%; */
     background-color: whitesmoke;
-}
-.leftsct #moto{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 600%;
-    white-space: pre-line;
     text-align: center;
-    text-shadow: 1.875rem 1.3125rem 0.625rem rgb(33, 33, 41);
+}
+
+#leftsct #moto{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: var(--motofontsz);
+    padding: 5%;
+    white-space: pre-line;
+    text-shadow: 0.2em 0.15em 0.08em rgb(33, 33, 41);
     color: rgb(36, 130, 98);
 }
 
-.rightsct{
+#rightsct{
     float: right;
-    width: 48%;
     height: 100%;
-    /* left: 50rem; */
     text-align: center;   
 }
 
-.rightsct img{
+#rightsct img{
     width: auto;
+    max-width: 100%;
     height: 100%;
     /* display: flex; */
     margin: 0 auto;
 }
 
-#triangle{
+#quoteSct {
     position: relative;
-    /* top:40rem; */
-    transform: translateY(-23%);
-    z-index: 3;
+    font-size: var(--quoteSctfontsz);
+    /* height: 100%; */
+    background-color: rgb(33, 33, 41);
+    border: 1rem solid rgb(36, 130, 98);
+    width:100%;
 }
 
-#quoteCont{
+#triangle{
     position: absolute;
-    top:100%;
-    width: 100%;
-    /* display: block; */
+    z-index: 3;
+    left:0%;
+    transform: translateY(-23%);
+
+}   
+
+#quoteCont{
+    position: relative;
+    top:0rem;
     text-align: center;
     z-index: 4;
 }
@@ -98,12 +108,14 @@
 }
 
 #quoteCont blockquote p{
+    font-size: 1.7em;
     color:whitesmoke;
-    font-size: 180%;
+    /* font-size: 180%; */
     display: inline-block;
 }
 
 #quoteCont blockquote cite{
+    font-size: 1em;
     color:whitesmoke;
     font-size: 150%;
     display: block;
@@ -117,47 +129,43 @@
     content:'-'
 }
 
-.secondsct{
+#secondsct{
+    margin-top: 5%;
     z-index: 2;
     position: relative;
-    left: 6%;
-    width: 94%;
-    height: 60rem;
-    margin-bottom: 3.125rem;
+    font-size: var(--pagecontsctfontsz);
 }
 
-.secondsct #primtitle{
+#secondsct #primtitle{
     position: relative;
     top: 25%;
     text-align: center;
 }
 
-.secondsct #pageconts{
+#secondsct #pageconts{
     position: relative;
-    height: 21.875rem;
     top:30%; 
     align-items: center;
     justify-content: space-evenly;
     
 }
 
-.secondsct #pageconts div{
+#secondsct #pageconts div{
+    font-size: 0.33em;
     background-color: rgb(33, 33, 41);
-    margin: 1.5%;
     text-align: center;
     border: 0.125rem solid rgba(36, 130, 98, 1);
-    width: 30%;
     display: inline-block;
 }
 
-.secondsct #pageconts #title{
+#secondsct #pageconts #title{
     position: relative;
     color: whitesmoke;
     font-size: 2rem;
 }
 
 
-.secondsct #pageconts div p{
+#secondsct #pageconts div p{
     position: relative;
     text-align: left;
     color: whitesmoke;
