@@ -1,27 +1,3 @@
-// Next task list:
-// - Create multiple layouts for differing screen sizes
-// -- Use generic class names to set container getSize
-// -- Have 12 different sizes available to use
-// -- Resize text or container height (undecided)
-// - Set the initial size to the coresponding reoluton
-// -deal with text resiszing and relative units
-
-// Detailed next task:
-//  - Set the SVG text to always remain centered
-//      - How: Get the  
-
-// Css modifications based of of html class names
-// Functions contained
-    // - Left and right set
-    // - 
-
-// Session Goals:
-    // Finish pile menu
-    // Finish projects page
-
-// Next Steps: This function needs to be made to be able to set and read the size of the text of the element.
-// Methods go in order of precidince and running in regular operatation
-
 // Text sizing types:
     // - Limited by character per line and only changing effecting the size of the text no relatives
     // - Limited by characters per line and changing the parent height to accomodate the text
@@ -57,14 +33,15 @@ class textSizer{
         }
 
     }
-
+    //  Cohort with the limit width function to set the css varaible to the desired font size
     setFont(el) {
         let nm = `--${el.attr("id")}fontsz`;
+        // Extract the rem font size of the document
         let win_wid = parseFloat($("html").css("fontSize").match(/[+-]?\d+(\.\d+)?/g));
         let size = `${primWin.checkClass(el,"fontSz")*win_wid}`;
         this.setCssVar(nm,size);
     }
-
+    // Allows a lower level element to set the height of the parent element
     relativeOuterContent(stand_el) {
         let base_height = parseFloat(stand_el.css("height"))/0.95;
         let rel_parent = stand_el.parents(".changeRec");
@@ -94,15 +71,8 @@ class windowObject{
             'xl':[1320,100000]
         };
         this.initWidth=this.getSize();
-        this.setInitSize();
-        this.calcResIntervals();
         this.html = document.getElementsByTagName('html')[0];
         this.txtSz = new textSizer();
-    }
-
-    // Initially set the correct size for specific screen resolutions
-    setInitSize() {
-        // $("html").css({"font-size":(this.initWidth/40)+"px"});
     }
 
     // Takes the class name and check for values attached to specific
@@ -118,18 +88,6 @@ class windowObject{
         return(num_val);
     }
 
-    calcResIntervals() {
-        var intervals = Array();
-        let minWid = 336;
-        let intSize = Math.round((this.initWidth-minWid)/6);
-        for (let ints = 6; ints >= 1; ints--) {
-            let curint = (intSize*ints)+minWid;
-            intervals.push([curint, (curint+intSize)/110]);
-        }
-        intervals[0][1] = intervals[0][0]/100;
-        this.resInts=intervals;
-    }
-
     getSize() {
         const width = document.documentElement.clientWidth;
         for (let size in this.layoutSizes) {
@@ -139,14 +97,10 @@ class windowObject{
         return(width);
     }
 
-    adjustLayout(dir) {
-        let dPx = this.initWidth-this.getSize();
-        
-        if (0 >= this.pos < this.resInts.length-1) {
-            this.pos = (this.getSize() > this.resInts[this.pos][0]) ? ((--this.pos >  0) ? this.pos:++this.pos): ((++this.pos <  6 && this.getSize() < this.resInts[this.pos][0]) ? this.pos:--this.pos);
-        }
-        // $("html").css({"fontSize": this.resInts[this.pos][1].toString()+'px'});
-        this.media.setels(['side','cent','marg','expand','transp']);
+    adjustLayout() {
+        // Keep getSize() to ensure that the responsive nav bar adjust properly
+        this.getSize();
+        this.media.setels(['side','cent','marg','transp']);
         this.setMargins();
         this.setNavVis();
 
@@ -160,7 +114,7 @@ class windowObject{
         }
     }
 
-    // Methid to set the naviagation bar visibiltiy based on the window size
+    // Method to set the naviagation bar visibiltiy based on the window size
     setNavVis() {
         let menu = $("#menu");
         if (this.size.includes('s')) {
@@ -172,52 +126,34 @@ class windowObject{
     }
 
     resize() {
-        if (this.getSize() < this.initWidth) {
-            // Move to next view after 336 of resolution change
-            $("html").css({"width": "99vw"});
-        }
         this.adjustLayout();
-        var els = document.getElementsByClassName("txtSet");
         for (let el of document.getElementsByClassName("txtSet")) {
             let jq_el = $(`#${el.id}`);
             primWin.txtSz.setFont(jq_el);
             this.txtSz.limitWidth(jq_el);
         }
     }
-
-    implementCss(href='') {
-        var link = document.createElement('link')
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = href
-        document.getElementsByTagName('HEAD')[0].appendChild(link);
-    }
     
 }
 
+// This class deals with the extraction of information from the html document and acts accordingly
+// - The class properties of the html document are used to identify necessary actions
+// - Note: For more information on the implementation use of the class commands see the index file 
 class mediaQ{
     constructor() {
         this.marginMap = {};
         this.dupeClassName();
-        this.setels(['side','cent','marg','expand','transp']);
+        this.setels(['side','cent','marg','transp']);
     }
 
-    setels(key_words=[],size = primWin.size) {
+    // Hub function that read parses through the class names and calls the appropriate coresponding functions
+    setels(key_words=[]) {
         for (let ind of key_words) {
             for (let el of document.getElementsByClassName(ind)) {
+                // The margin setter is called outside the class name iterator because the marginMap does 
+                // that instead
                 var jq_el = (document.getElementById(el.id))?$(`#${el.id}`):NaN;
                 if (ind == 'marg' && el.className.includes('m*')) this.mapMargins(el);
-                
-                else if (jq_el != NaN) {
-                    if (ind == 'expand') {
-                        if ((el.className.baseVal.includes('sib')))
-                            this.expCont(jq_el,el.className.baseVal);
-                        else if ((el.className.includes('sib'))) {
-                            this.expCont(el,el.className);
-                        }
-                        continue;
-                    }
-                }
 
                 for (let nm of el.className.split(' ')) {
                     switch (ind) {
@@ -226,9 +162,6 @@ class mediaQ{
                             break;
                         case 'side':
                             this.setSide(el, nm);
-                            break;
-                        case 'expand':
-                            this.expCont(el,nm)
                             break;
                         case 'transp':
                             this.transp(jq_el,nm);
@@ -242,7 +175,6 @@ class mediaQ{
 
     // Use the key indacators to determine classes that neeed to be set left or right
     setSide(setClass, nm) {
-        
         if (nm.includes('le')) {
             setClass.style.left = `${nm.slice(-2)}%`;
         }
@@ -282,7 +214,6 @@ class mediaQ{
     // |-----|---xl---|---l---|---s---|---xs---|---d---|-----a-----|
     // | id1 |T,R,B,L-|T,R,B,L|T,R,B,L|T,R,B,L-|T,R,B,L|True/False-|
     // | id2 |T,R,B,L-|T,R,B,L|T,R,B,L|T,R,B,L-|T,R,B,L|True/False-|
-
     mapMargins(setClass) {
         let id = setClass.id.toString();
         let newId = {[id]:{
@@ -325,13 +256,6 @@ class mediaQ{
         }
     }
 
-    // Goal: Make the children elements within a sections or division align in a developer-set configuration
-    expCont(jq_el,class_nm) {        
-        let sibling = jq_el.siblings().eq(parseInt(class_nm.split(' ').filter(nm=>(nm.includes("sib")))[0].match(/[+-]?\d+(\.\d+)?/g))-1)
-        var rel_height = sibling.outerHeight()
-        jq_el.css("height",rel_height*2.5);
-    }
-
     // Set the class to make multiple classes responsive and abide by the DRY principle for coding
     repeatClassNm(jq_el,new_nm='') {
         jq_el.addClass(new_nm).removeClass('resp')
@@ -352,20 +276,17 @@ class mediaQ{
     }
 }
 
+// Load this content before the DOM is ready
 function priorContLoad() {
     return (new windowObject());
 }
 
 let primWin = priorContLoad();
 
-function postContLoad(href='') {
-    primWin.media = new mediaQ();
-    primWin.resize(); 
-    primWin.implementCss(href);
-}
-
 // UI Functions
 $(document).ready(function(){
+    primWin.media = new mediaQ();
+    primWin.resize(); 
     $( window ).on('resize', function(){
         primWin.resize();
     }), 
