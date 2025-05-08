@@ -2,7 +2,7 @@
 
 :root {
     --primaryfontsz: 1rem;
-    --projectGridfontsz: 0.95rem;
+    --projectsPortfoliofontsz: 0.95rem;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -60,13 +60,40 @@
     display: inline-block;
 }
 
-#primary #projectGrid{
-    /* display: grid; */
+/* Portfolio part */
+
+#primary #projectsPortfolio {
+    position: relative;
+    font-size: var(--projectsPortfoliofontsz);
+    width: 100%;
+    height: auto;
+}
+
+.arrow-up-with-stem {
+    position: relative;
+    width: 1em;
+    height: 100em;
+    background: rgb(36, 130, 98);
+    margin: 2.5em auto;
+}
+
+.arrow-up-with-stem:after {
+    content: '';
+    position: absolute;
+    top: -1.9em;
+    left: -0.5em;
+    width: 0;
+    height: 0;
+    border-left: 1em solid transparent;
+    border-right: 1em solid transparent;
+    border-bottom: 2em solid rgb(36, 130, 98);
+}
+
+/* #primary #projectGrid{
     position: relative;
     font-size: var(--projectGridfontsz);
     width: 100%;
     height: auto;
-    /* aspect-ratio:2/3.5; */
     grid-template-areas: 
         'topLeft topRight'
         'centerFocus centerFocus'
@@ -134,7 +161,6 @@
 }
 
 #images{
-    
     grid-area: centerFocus;
     width: 50%;
     margin: 5%;
@@ -172,16 +198,9 @@
     color: whitesmoke;
     font-size: 1.35em;
 }
-/* #minor .samples ul li button img{
-    width:100%;
-    height:auto;
-}
-
-#minor .samples ul li iframe{
-    visibility: hidden;
-} */
 
 #webpage{
     grid-area: bottomRight;
     margin: 5% 0 5% 0;
-}
+} */
+
