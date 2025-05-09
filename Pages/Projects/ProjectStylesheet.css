@@ -67,14 +67,17 @@
     font-size: var(--projectsPortfoliofontsz);
     width: 100%;
     height: auto;
+    padding: 4em;
 }
 
 .arrow-up-with-stem {
-    position: relative;
+    position: absolute;
     width: 1em;
-    height: 100em;
+    height: 95%;
     background: rgb(36, 130, 98);
-    margin: 2.5em auto;
+    z-index: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .arrow-up-with-stem:after {
@@ -84,10 +87,134 @@
     left: -0.5em;
     width: 0;
     height: 0;
+    z-index: 0;
     border-left: 1em solid transparent;
     border-right: 1em solid transparent;
     border-bottom: 2em solid rgb(36, 130, 98);
 }
+
+/* General formatting for the projects stack */
+.projectDesc {
+    /* Split the container into description and image columns */
+    position: relative;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto 1fr;
+    /* place-items: center; */
+    /* align-content: center;
+    justify-content: center; */
+    z-index: 1;
+    gap: 1em;
+    padding: 0.5em;
+    margin: 4em 0;
+}
+
+.projectDesc > a {
+    font-size: 2em;
+    color: rgb(36, 130, 98);
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    transition: color 0.03s ease;
+    align-self: center;
+}
+
+.projectDesc > a:hover {
+    color: rgb(45, 160, 120); /* Lighter shade of your green */
+    text-decoration: underline;
+    font-weight: normal; /* Ensures no bold on hover */
+}
+
+.projectDesc h2 {
+    font-size: 1em;
+    align-self: center;
+    justify-self: center;
+}
+
+.rightSide {
+    left: 30%; /* This will need to be turned into a variable for responsive design */
+    background-color: rgb(129, 125, 125);
+    border: 0.75em solid rgb(36, 130, 98);
+}
+
+.rightSide p {
+    color: rgb(33, 33, 41);
+}
+
+.rightSide h2 {
+    color: rgb(33, 33, 41);
+}
+
+.leftSide {
+    background-color: rgb(33, 33, 41);
+    border: 0.75em solid rgb(36, 130, 98);
+}
+
+.leftSide p {
+    color: whitesmoke;
+}
+
+.leftSide h2 {
+    color: whitesmoke;
+}
+
+.descCol {
+    height: 100%;
+}
+
+.projectDesc ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
+    margin-left: 0.5em;
+}
+
+.projectDesc .iconGrid {
+    display: grid;
+    padding: 1em;
+    align-self: center;
+    place-items: center; 
+    justify-content: center;
+    justify-self: center;
+    height: fit-content;
+}
+
+.iconGrid img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Networks research formatting */
+/* #CommsResearch .imgCol {
+
+} */
+
+#CommsResearch img {
+    max-height: 90%;
+}
+
+#QuantumAlg .iconGrid {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 50% 50%;
+    justify-content: center;
+}
+
+#CellularAut .iconGrid {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+    max-width: 100%;
+}
+
+#AutoWeed .iconGrid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    justify-content: center;
+    gap: 0.5em;
+}
+
 
 /* #primary #projectGrid{
     position: relative;
@@ -203,4 +330,9 @@
     grid-area: bottomRight;
     margin: 5% 0 5% 0;
 } */
+
+#information {
+    position: relative;
+    z-index: 2;
+}
 
