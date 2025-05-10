@@ -157,8 +157,10 @@ p {
     margin:3% 3% 3% 7%;
 }
 
- #Visions{
-    display: block;
+ #Visions .contentGrid {
+    display: grid;
+    grid-template-columns: 46% 50%;
+    gap: 4%;
     /* font-size: var(--Visionsfontsz); */
     font-size: 1.5rem;
 }
@@ -180,29 +182,6 @@ p {
     margin:2%;
     font-size: 1.5em;
 }
-
- #Visions #school{
-    float: left;
-}
-
- #Visions #school ul{
-    text-align: left;
-}
-
- #Visions #school ul li{
-    margin-left:10%;
-    /* font-size: 1rem; */
-}
-
- #Visions #school img{
-    width: 40%;
-    height: auto;
-    margin-top: 4%;
-}
- #Visions #entre{
-    float: right;
-}
-
 
  #Visions div h3{
     margin-left: 3%;

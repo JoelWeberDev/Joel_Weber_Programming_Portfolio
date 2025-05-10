@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Ask Me</title>
+    </head>
+
+    <body>
+        <h3>
+            I keep my work on automated weeding private since the objective is to 
+            push this into a commerial product once the prototyping and testing
+            is complete. However if after seeing my brief documentation you would
+            like to know more then I am happy to share some code, details and results
+            with you. 
+            <br>
+            Please email me at joelweberdevelopment@gmail.com
+        </h3>
+        <a href="../Projects/PortfolioProjects.htm">Back to projects</a>
+
+        <div id="readme content">
+            <h1 id="robust-crop-row-detector">Robust Crop Row Detector Project README</h1>
+            <p>This system is designed to perform live detection of crop rows in fields with various types of crops. It has been designed to be robust in its capacity to differentiate weeds from the desired crop. The ability to detect crop rows in the field is intended to modernize the 1997 <a href="https://drive.google.com/file/d/1C9tRUihWTYV-mEKkKOlWpIxzGHnaR0qW/view?usp=sharing">Sukup Slide Guide</a> tractor attachment to automate the weeding process for organic farming. Since the ability of robust detection of crop rows in the field is such a useful application this product will be generalized for integration with other products.</p>
+            <h3 id="developed-by-joel-weber">Developed By Joel Weber</h3>
+            <h2 id="development-details">Development Details</h2>
+            <p>This project is in the development stage at the moment, but a prototype is intended to be tested this summer in live action. The results from the testing and documentation will be placed in this repositiory once it is collected. </p>
+            <p><strong><em>Disclaimer</em></strong> All the software here is provided as-is and may not be fully tested at the moment. </p>
+            <p><strong><em>Updates</em></strong> Continual developments will periodically be made to the software as the product develops</p>
+            <h2 id="current-documentation">Current Documentation</h2>
+            <p>  <em>Description</em> This section includes some examples of the model working on images and live video on multiple different crops and stages of growth. It also includes the issues that are evident in these working examples along with methods that are being implemented to resolve those problems. </p>
+            <h3 id="early-winter-wheat">Early Winter Wheat</h3>
+            <p>  <strong>Analysis</strong> Winter wheat samples like this have been the primary testing data source this far. This demonstrates that the system is able to separate rows that are in close proximity to each other. Some of the samples have had stochastic noise introduced to simulate variance in the environment or moderate weed foliage in the field. All the wheat in these images is spaced at an average of 18 inches. 
+            </br>
+            <strong>Short clips of the row detection working</strong> </p>
+            <p>  <a href="https://youtu.be/QxzcWDdI4Ac"><img src="https://github.com/JoelWeberDev/agricultural_crop_row_detection/blob/main/Demonstration_data/Readme_images/Crop_recog_face_image.jpg" alt="Detection on winter wheat with mask and noise"></a></p>
+            <p>  <a href="https://youtu.be/lmLJby_kZS8"><img src="https://github.com/JoelWeberDev/agricultural_crop_row_detection/blob/main/Demonstration_data/Readme_images/Crop_recog_face_image_masked.jpg" alt="Detection on winter wheat without mask and noise"></a></p>
+            <h3 id="early-corn">Early Corn</h3>
+            <p>  <strong>Analysis</strong> Here are some tests that were performed on corn that was planted at 80 cm spacing. This test the model&#39;s ability for precision when the plants are small and its ability to detect when there are few rows in the frame. It is evident in these samples that the detection requires more work to on samples with broad spacing and nuances with the vanishing point location (shown sample 1). The resolution to these issues will be added when the following two modules are created: </p>
+            <pre><code><span class="hljs-number">1.</span> Proximal <span class="hljs-built_in">line</span> search: For <span class="hljs-keyword">each</span> detected <span class="hljs-built_in">line</span> (including <span class="hljs-built_in">to</span> ones indication <span class="hljs-keyword">a</span> missed <span class="hljs-built_in">line</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> initial detection) this module will <span class="hljs-built_in">process</span> <span class="hljs-keyword">the</span> parts <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> image that around <span class="hljs-keyword">the</span> <span class="hljs-built_in">line</span> <span class="hljs-built_in">to</span> ensure <span class="hljs-keyword">the</span> <span class="hljs-built_in">line</span> is centered <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> row <span class="hljs-keyword">and</span> <span class="hljs-built_in">to</span> determine where <span class="hljs-keyword">the</span> vanishing point may be <span class="hljs-built_in">from</span> <span class="hljs-keyword">the</span> slope <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> row. 
+            <span class="hljs-number">2.</span> Previous Vanishing Point: In video data this module will consider <span class="hljs-keyword">the</span> location <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> vanishing point <span class="hljs-built_in">from</span> <span class="hljs-keyword">the</span> past frame <span class="hljs-keyword">and</span> use that <span class="hljs-keyword">as</span> <span class="hljs-keyword">the</span> vanishing point <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> next frame. 
+            </code></pre><p>  <em>Note</em> The images are links to videos</p>
+            <p>  <a href="https://youtu.be/5f2KKNgRbH0"><img src="https://github.com/JoelWeberDev/agricultural_crop_row_detection/blob/main/Demonstration_data/Readme_images/corn_detect_1_vid_face.png?raw=true" alt="Corn detection sample 1"></a>
+            <a href="https://youtu.be/VGHKuh_6SN4"><img src="https://github.com/JoelWeberDev/agricultural_crop_row_detection/blob/main/Demonstration_data/Readme_images/corn_detect_2_vid_face.png?raw=true" alt="Corn detection sample 2"></a>
+            <a href="https://youtu.be/4nv9RsXS6kk"><img src="https://github.com/JoelWeberDev/agricultural_crop_row_detection/blob/main/Demonstration_data/Readme_images/corn_detect_3_vid_face.png?raw=true" alt="Corn detection sample 3"></a>
+            <a href="https://youtu.be/P-VutRmEgPk"><img src="https://github.com/JoelWeberDev/agricultural_crop_row_detection/blob/main/Demonstration_data/Readme_images/corn_detect_4_vid_face.png?raw=true" alt="Corn detection sample 4"></a>
+            <a href="https://youtu.be/spYNIlot6pk"><img src="https://github.com/JoelWeberDev/agricultural_crop_row_detection/blob/main/Demonstration_data/Readme_images/corn_detect_5_vid_face.png?raw=true" alt="Corn detection sample 5"></a>
+            <a href="https://youtu.be/95isImccxFQ"><img src="https://github.com/JoelWeberDev/agricultural_crop_row_detection/blob/main/Demonstration_data/Readme_images/corn_detect_6_vid_face.png?raw=true" alt="Corn detection sample 6"></a></p>
+            <h3 id="color-layer-approach-">Color Layer Approach:</h3>
+            <p> <strong>Description</strong> The model is currently using a series of layers that progressively separate all the pixels that lie within a specific sliver of the green color hue. A line detection algorithm is performed on one each of these layers independently. The lines from each of these layers are brought together into one frame where they are filtered by line gradient and the areas of the image that have the highest density of lines are identified as the next probable crop rows within the image frame.<br> <em>Note</em> This will be the approach that is used with stereo vision except instead of detection being applied to zones of green pixels the heights in a <a href="https://en.wikipedia.org/wiki/Topographic_map">topographic</a> frame constructed by the stereo camera will be used. </p>
+            <h4 id="layered-sample-without-line-grouping">Layered Sample Without Line Grouping</h4>
+            <p> <img src="https://github.com/JoelWeberDev/agricultural_crop_row_detection/blob/main/Demonstration_data/Readme_images/No_line_grouping.png" alt="Non-grouped line frame"></p>
+            <h4 id="layered-sample-with-line-grouping-uses-many-more-layers-which-increases-detection-quality-but-decreases-speed-">Layered Sample With Line Grouping (Uses many more layers which increases detection quality, but decreases speed)</h4>
+            <p> <img src="https://github.com/JoelWeberDev/agricultural_crop_row_detection/blob/main/Demonstration_data/Readme_images/Good_detec.png" alt="Grouped line frame"></p>
+            <h3 id="ransac-lines-approach">RANSAC lines approach</h3>
+            <p> <strong>Description</strong> The is the second of the two ways the lines are detected in the video. This approach masks an image to show only green pixels within a certain range of hue. From this masked image it creates a number of random lines by randomly selecting 2 points and creating a line that passes through them. These lines are filtered based on their r^2 error from the vanishing point. The error is below a given threshold then it is considered good line otherwise it is discared. Similar to the other method these lines then are collected and fed into a grouping function to determine where the crop rows most likely lie. If both the ransac and houghlines detect are run and compared at the end they can produce very robust results</p>
+            <p> <img src="https://github.com/JoelWeberDev/agricultural_crop_row_detection/blob/a07e9ab084d64c666e928d29807585c04b73e706/Demonstration_data/Readme_images/ransac_test_final.png" alt="Ransac Line Results"> </p>
+            <p> <img src="https://github.com/JoelWeberDev/agricultural_crop_row_detection/blob/a07e9ab084d64c666e928d29807585c04b73e706/Demonstration_data/Readme_images/ransac_many.png" alt="Many Ransac Lines"></p>
+            <h3 id="bottle-necks">Bottle Necks</h3>
+            <blockquote>
+            <blockquote>
+            <ol>
+            <li><strong>Testing</strong>: Creating proper tests that validate the quality of a mechanism has been difficult. Mostly I have been working with the data that I have collected, but these are just a few frames and I do not know how it will operate when in the field.</li>
+            <li><strong>Running speed:</strong> The processor may struggle to keep up with our demands since there are various proceedures that are quite computationally expensive. I am planning to get all the pieces of the puzzle together and begin optimizing from there.</li>
+            <li><strong>Hardware:</strong> What camere are we using? Do we desire to use depth vision and if so how can I get the data for that?</li>
+            <li><strong>Camera calibration:</strong> Until I have the final camera and positioning on the implement I cannot do a full camera calibration. </li>
+            <li><strong>Noise:</strong> What environmental factors will we face? How do we deal with weeds in the field and what intuition does the camera need to have if it really will be general enough to handle 99% of situations just fine?</li>
+            </ol>
+            </blockquote>
+            </blockquote>
+            <h3 id="camera-data">Camera Data</h3>
+            <p>  All test data has been gathered with a DJI mini se camera flying at 1 meter above the fields.
+            To calibrate for a different camera execute the following steps:</p>
+            <ol>
+            <li>Gather 5 images of a chess/checkerboard with your camera</li>
+            <li>In the Camera_Calib folder create a new folder named Chess_imgs where you will place the chessboard images you collected </li>
+            <li>In the calibrate function of Chess_board_calib.py set square_size= the width of 1 chessboard square in mm, width= the horizontal number of inner squares (not touching the board edge), height= the vertical number of horizontal squares </li>
+            <li>Navigate to the Camera_Calibration.py file and run it which will automatically update the Cam_spect_dict.json </li>
+            </ol>
+            <h3 id="status">Status</h3>
+            <p>  The models that have been made are currently being used with prerecorded videos or images and are not yet ready to handle live testing. </p>
+            <p>  <strong>Model Outline</strong></p>
+            <ol>
+            <li>The images or frames from the input folder are opened with the cv2.imread function.</li>
+            <li>The frame is then resized, blurred, and converted to a Hsv color format.</li>
+            <li>In the edge_detection module the green colors are extracted from the image through the cv2.inRange function.</li>
+            <li>This mask is then subdivided into multiple masks which define a more strict range of green shades.</li>
+            <li>The <a href="https://docs.opencv.org/3.4/dd/d1a/group__imgproc__feature.html#ga8618180a5948286384e3b7ca02f6feeb">cv2.HoughlinesP</a> function is performed on each of the masked images including the original.</li>
+            <li>The approximate vanishing point of the image is calculated and the lines are filtered by their derivative to discard any that do not pass near enough to the vanishing point.</li>
+            <li>The remaining lines are grouped by proximity and derivative.</li>
+            <li>All the grouped lines from every mask are gathered and processed to determine where the most probable location of the crop rows based on the distribution of the lines.</li>
+            <li><p>These rows are returned as the detected rows.
+            The software is currently under construction and may require some adaptation to achieve the correct performance.</p>
+            <h3 id="next-steps">Next Steps</h3>
+            <p><strong>Adaptive Paramters</strong>
+            We are currently working to bring every hard-coded value for a wide array of functions into one place that will calculate them relative to the specific nuances that may be present in the environment. This adaptive parameter model will also double as the hub for the machine learning aspect of the model where the optimal set of values to input into the function can be determined automatically.</p>
+            <p><strong>CUDA enabled for GPU</strong>
+            The model is currently running too slow to perform real-time row detection. To solve this we are working to enable this project with <a href="https://developer.nvidia.com/cuda-zone#:~:text=CUDA%C2%AE%20is%20a%20parallel,harnessing%20the%20power%20of%20GPUs">Nvidia Cuda</a> to allow it to be run with a GPU for speed accelerations of 10x. </p>
+            <p><strong>General Maintenance</strong></p>
+            <ul>
+            <li>In the code, there are many remnants from old code that needs to be removed and simplified.</li>
+            <li>We are developing a main file that will house any value that may need to be regularly adjusted.</li>
+            <li>C++: The whole process is going to be rewritten in C++ to boost speed and performance. The Python that is being used now is solely for the purposes of prototyping</li>
+            <li>When main is added there will be an I/O interaction to set user values that are needed. (Right now they are just hidden in Adaptive_values.json)</li>
+            </ul>
+            <h3 id="future-plans-for-development">Future Plans for Development</h3>
+            <p><strong>Stereo Vision</strong>:
+            The final objective is to develop this system as a module that can be installed on the <a href="https://docs.luxonis.com/projects/hardware/en/latest/pages/DM1097.html">OAK-D-CM4</a> stereo vision camera. This will allow for the 3D processing of the field to work in parallel with the color analysis. 
+            <strong>Machine Learning for Row Recognition</strong>
+            The plan is to release an initial testing prototype of the project that will gather data while in use. The data that is collected will be used to train special classifier models tailored to the detection of the crop rows. This development has the potential to massively boost performance and decrease the degree of manual programming that will be required.</p>
+            </li>
+            </ol>
+            <h2 id="contibutuions">Contibutuions</h2>
+            <p>Pull requests are welcome. Contact me at joelweberdevelopment@gmail.com to express any comments or concerns.</p>
+        </div>
+    </body>
+</html>

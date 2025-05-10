@@ -73,7 +73,7 @@
 .arrow-up-with-stem {
     position: absolute;
     width: 1em;
-    height: 95%;
+    height: 97%;
     background: rgb(36, 130, 98);
     z-index: 0;
     left: 50%;
@@ -137,7 +137,7 @@
     border: 0.75em solid rgb(36, 130, 98);
 }
 
-.rightSide p {
+.rightSide ul {
     color: rgb(33, 33, 41);
 }
 
@@ -150,7 +150,7 @@
     border: 0.75em solid rgb(36, 130, 98);
 }
 
-.leftSide p {
+.leftSide ul {
     color: whitesmoke;
 }
 
@@ -189,8 +189,11 @@
 
 } */
 
-#CommsResearch img {
-    max-height: 90%;
+#CommsResearch .iconGrid {
+    display: grid;
+    width: 80%;
+    grid-template-rows: 40% 50%;
+    justify-content: center;
 }
 
 #QuantumAlg .iconGrid {
@@ -215,121 +218,65 @@
     gap: 0.5em;
 }
 
-
-/* #primary #projectGrid{
-    position: relative;
-    font-size: var(--projectGridfontsz);
-    width: 100%;
-    height: auto;
-    grid-template-areas: 
-        'topLeft topRight'
-        'centerFocus centerFocus'
-        'bottomLeft bottomRight';
-    grid-template-columns: 45% 45%;
-    grid-template-rows: auto;
-    text-align: center;
-    justify-content: space-evenly;
-}
-
-
-#primary #projectGrid .grid{
-    background-color: rgb(33, 33, 41);
-    border: 0.15rem solid rgba(36, 130, 98, 1);
-}
-
-#primary #projectGrid div h1{
-    font-size: 2em;
-    text-decoration: underline;
-}
-
-#primary #projectGrid div .desc p{
-    margin:2%;
-    color:whitesmoke;
-    font-size: 1.5em;
-}
-
-#cropRow{
-    grid-area: topLeft;
-    margin: 5% 0 5% 0;
-}
-#compitence{
-    grid-area: topRight;
-    margin: 5% 0 5% 0;
-}
-
-#cert{
-    font-size:1.5em;
-    text-decoration: underline;
-    color: whitesmoke;
-}
-
-.skills{
-    width: 100%;
-    list-style: none;
+#SciComp .iconGrid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 50% 50%;
     justify-content: center;
 }
-.skills li{
-    width: 50%;
-    margin:auto;
 
+#NasServer .iconGrid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
 }
 
-.skills li a{
-    text-decoration: underline;
-    color: whitesmoke;
+#NasServer .bash {
+    grid-column: 1 / -1;
+    grid-row: 2;
 }
 
-.skills li img{
-    width:100%;
-    height: auto;
-
+#IotData .iconGrid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    justify-content: center;
 }
 
-#images{
-    grid-area: centerFocus;
-    width: 50%;
-    margin: 5%;
+#AgEmbedded .iconGrid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    justify-content: center;
 }
 
-#minor{
-    grid-area: bottomLeft;
-    margin: 5% 0 5% 0;
+#Printer3D .iconGrid {
+    display: grid;
+    width: 75%;
+    grid-template-rows: 50% 50%;
+    justify-content: center;
 }
 
-#minor .samples ul li{
-    display: inline-block;
-    width: 40%;
-    margin: 2%;
-    justify-content: space-around;
-    align-items: center;
-    vertical-align: top;
+#Website .iconGrid {
+    display: grid;
+    grid-template-columns: 56% 44%;
+    grid-template-rows: 50% 50%;
+    justify-content: center;
 }
 
-#minor .samples ul li a h3{
-    font-size: 1.5em;
-    color: rgb(36, 130, 98);
-    text-decoration: underline;
+#Game .iconGrid {
+    display: grid;
+    width: 80%;
+    grid-template-rows: 56% 34%;
+    justify-content: center;
 }
 
-#minor .samples ul li a img{
-    width: 100%;
-    height:auto;
-    background-color: whitesmoke;
+#RCPlanes .iconGrid {
+    display: grid;
+    width: 70%;
+    grid-template-rows: 56% 34%;
+    justify-content: center;
 }
-
-#minor .samples ul li p{
-    width: 100%;
-    height: auto;
-    color: whitesmoke;
-    font-size: 1.35em;
-}
-
-#webpage{
-    grid-area: bottomRight;
-    margin: 5% 0 5% 0;
-} */
 
 #information {
     position: relative;
